@@ -26,9 +26,6 @@ const config: Config = {
         md: '16px',
         lg: '24px',
       },
-      fontFamily: {
-        rounded: ['var(--font-m-plus-rounded-1c)', 'sans-serif'],
-      },
       fontSize: {
         base: '16px',
         lg: '18px',

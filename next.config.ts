@@ -2,10 +2,7 @@ import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
   reactStrictMode: true,
-  output: 'export',
-  experimental: {
-    optimizeCss: false, // LightningCSSをオフにする！
-  },
+  output: 'export', // これ入ってるならOK！
 };
 
 export default nextConfig;

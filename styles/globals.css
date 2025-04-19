@@ -25,5 +25,4 @@
 body {
   color: var(--foreground);
   background: var(--background);
-  @apply font-rounded text-foreground bg-background;
 }
