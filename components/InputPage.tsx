@@ -57,7 +57,7 @@ export default function InputPage() {
         </>
       }
     >
-      <div className="w-full flex justify-center">
+      <div className="w-full flex justify-center mt-12">
         <div
           onClick={handleClick}
           className="w-full max-w-[312px] border-2 border-black bg-white text-center text-[22px] px-4 py-4 rounded-[16px] cursor-pointer"

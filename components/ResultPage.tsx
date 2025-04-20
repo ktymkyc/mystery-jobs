@@ -80,7 +80,7 @@ export default function ResultPage() {
         </>
       }
     >
-      <div className="flex flex-col items-center justify-between flex-grow px-6 gap-6 mt-8 min-h-[400px]">
+      <div className="flex flex-col items-center justify-between flex-grow px-6 gap-6 mt-12">
         {/* 解説テキスト */}
         <p className="text-[20px] font-medium text-[#233506] leading-relaxed max-w-[312px]">
           {description}

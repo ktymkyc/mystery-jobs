@@ -27,13 +27,13 @@ export default function ErrorPage() {
         </button>
       }
     >
-      <div className="flex flex-col items-center justify-between flex-grow px-6 gap-6 mt-8 min-h-[400px]">
+      <div className="flex flex-col items-center justify-between flex-grow px-6 gap-6 mt-12">
         {/* サブテキスト */}
         <p className="text-[20px] font-medium text-center text-[#233506] leading-relaxed max-w-[312px]">
           🙇‍♂️しばらくお待ちください🙇‍♀️
         </p>
         {/* 4人イラスト */}
-        <div className="grid grid-cols-2 gap-4 mt-8">
+        <div className="grid grid-cols-2 gap-4 mt-auto">
           <div className="text-[100px] leading-[100px]">👨‍🍳</div>
           <div className="text-[100px] leading-[100px]">👩‍🎤</div>
           <div className="text-[100px] leading-[100px]">👩‍🚀</div>
