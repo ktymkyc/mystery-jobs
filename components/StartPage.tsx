@@ -32,7 +32,7 @@ export default function StartPage() {
         </>
       }
     >
-      <div className="grid grid-cols-2 gap-4 mt-8">
+      <div className="grid grid-cols-2 gap-4 mt-8 mt-auto">
         <div className="text-[100px] leading-[100px]">👨‍🍳</div>
         <div className="text-[100px] leading-[100px]">👩‍🎤</div>
         <div className="text-[100px] leading-[100px]">👩‍🚀</div>

@@ -20,7 +20,7 @@ export default function AppLayout({ children, header, footer }: AppLayoutProps) 
           {header}
         </header>
       )}
-      <main className="flex flex-col items-center w-full">
+      <main className="flex flex-col items-center justify-start w-full min-h-[300px]">
         {children}
       </main>
       {footer && (
