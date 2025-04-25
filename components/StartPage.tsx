@@ -13,15 +13,21 @@ export default function StartPage() {
           <h4 className="text-[16px] font-black leading-tight text-center">
             🔍ぜったい転職サイトに載ってない
           </h4>
-          <h1 className="text-[64px] font-black leading-tight text-center">
-            知らない<br />職業診断
-          </h1>
+          <div className="flex flex-col items-center gap-2 relative pt-4">
+            <h1 className="text-[64px] font-black leading-tight text-center">
+              <span className="absolute -left-4 -top-1 text-[22px] font-black text-[#233506] -rotate-6">だれも</span>
+              知らない<br />適職診断
+            </h1>
+            <p className="text-transparent bg-clip-text bg-gradient-to-b from-[#FC4CFF] to-[#CA00A5] text-[24px] font-black">
+              MYSTERY JOBS
+            </p>
+          </div>
         </>
       }
       footer={
         <>
           <h4 className="text-[16px] font-extrabold text-[#4D0532] text-center">
-            さぁ知らない職業を探そう！
+            だれも知らない職業を探そう！
           </h4>
           <button
             onClick={() => router.push('/input')}

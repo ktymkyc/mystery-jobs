@@ -1,11 +1,11 @@
 {
-    "name": "知らない職業診断",
-    "short_name": "職業診断",
+    "name": "だれも知らない適職診断",
+    "short_name": "適職診断",
     "start_url": "/",
     "display": "standalone",
     "background_color": "#ffffff",
     "theme_color": "#ffffff",
-    "description": "簡単な質問に答えるだけで、あなたの知らない職業が診断されます！",
+    "description": "簡単な質問に答えるだけで、だれも知らない適職診断ができちゃいます！",
     "icons": [
         {
         "src": "/icon-192.png",

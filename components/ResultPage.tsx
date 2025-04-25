@@ -57,7 +57,7 @@ export default function ResultPage() {
       header={
         <header className="flex flex-col items-center gap-2">
           <h4 className="text-[16px] font-black leading-tight text-center text-[#233506]">
-            🔍あなたの知らない職業は…
+            🔍だれも知らない職業は...
           </h4>
           <h2 className="flex items-center justify-center text-[28px] font-black leading-tight text-center text-[#233506] gap-2">
             <span>{icon1}</span>

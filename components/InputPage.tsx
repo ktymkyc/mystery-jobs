@@ -31,7 +31,7 @@ export default function InputPage() {
       header={
         <header className="flex flex-col items-center gap-2">
           <h4 className="text-[16px] font-black leading-tight text-center text-[#233506]">
-            🔍知らない職業を見つけるには？
+            🔍職業を見つけるには？
           </h4>
           <h2 className="text-[28px] font-black leading-tight text-center text-[#233506]">
             📅生年月日を入力📅
@@ -41,7 +41,7 @@ export default function InputPage() {
       footer={
         <>
           <h4 className="text-[16px] font-extrabold text-[#4D0532] text-center">
-            あなたにマッチした知らない職業を
+            あなたにマッチした職業を
           </h4>
           <button
             onClick={handleSubmit}
