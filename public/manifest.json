@@ -1,6 +1,6 @@
 {
-    "name": "だれも知らない適職診断",
     "short_name": "だれ職",
+    "name": "だれも知らない適職診断",
     "start_url": "/",
     "display": "fullscreen",
     "background_color": "#ff4fe2",
