@@ -9,14 +9,14 @@ export default function ErrorPage() {
   return (
     <AppLayout
       header={
-        <header className="flex flex-col items-center gap-2">
+        <>
           <h4 className="text-[16px] font-black leading-tight text-center text-[#233506]">
             🙏ごめんなさい
           </h4>
           <h2 className="text-[28px] font-black leading-tight text-center text-[#233506]">
             📶通信エラー📶
           </h2>
-        </header>
+        </>
       }
       footer={
         <button

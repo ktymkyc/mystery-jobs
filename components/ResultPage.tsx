@@ -55,7 +55,7 @@ export default function ResultPage() {
   return (
     <AppLayout
       header={
-        <header className="flex flex-col items-center gap-2">
+        <>
           <h4 className="text-[16px] font-black leading-tight text-center text-[#233506]">
             🔍だれも知らない職業は...
           </h4>
@@ -64,7 +64,7 @@ export default function ResultPage() {
             <span>{title}</span>
             <span>{icon2}</span>
           </h2>
-        </header>
+        </>
       }
       footer={
         <>
@@ -72,7 +72,7 @@ export default function ResultPage() {
             今すぐ転職？それとも
           </h4>
           <button
-            onClick={() => router.push('/input')}
+            onClick={() => router.push('/questions')}
             className="w-full max-w-[312px] bg-gradient-to-b from-[#FC4CFF] to-[#CA00A5] text-white text-[22px] font-bold py-4 rounded-[24px] shadow-md shadow-black/25 cursor-pointer"
           >
             もう一度診断する
