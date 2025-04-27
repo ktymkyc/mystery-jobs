@@ -42,9 +42,14 @@ export default function ResultPage() {
   if (isLoading) {
     // ⬇️ ローディング（＝広告表示を想定）
     return (
-      <div className="min-h-screen flex items-center justify-center bg-white">
+      <div 
+        className="min-h-screen flex items-center justify-center"
+        style={{
+          background: 'linear-gradient(180deg, #E5FF63 0%, #F0FFD0 15%, #FFFBF0 60%, #E3DAFF 80%, #ABC4FF 100%)',
+        }}
+      >
         <div className="text-center">
-          <p className="text-lg font-bold text-black mb-4">Now Loading...</p>
+          <p className="text-lg font-bold text-[#233506] mb-4">Now Loading...</p>
           {/* 将来的にここが広告に差し替わるイメージ */}
         </div>
       </div>
