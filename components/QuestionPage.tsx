@@ -9,8 +9,8 @@ export default function QuestionPage() {
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
   const router = useRouter();
 
-  // 引数を受け取れるように変更（ただし中身では使わない）
-  const handleAnswer = (_answer?: boolean) => {
+  // 引数なしバージョンに変更
+  const handleAnswer = () => {
     if (currentQuestionIndex < questions.length - 1) {
       setCurrentQuestionIndex(currentQuestionIndex + 1);
     } else {
@@ -37,13 +37,13 @@ export default function QuestionPage() {
           </h4>
           <div className="flex w-full flex-row items-center justify-center gap-3">
             <button
-              onClick={() => handleAnswer(false)}
+              onClick={handleAnswer} // ← ここをシンプルに
               className="w-full max-w-[150px] bg-gradient-to-b from-[#FC4CFF] to-[#CA00A5] text-white text-[22px] font-bold py-4 rounded-[24px] shadow-md shadow-black/25 cursor-pointer"
             >
               いいえ
             </button>
             <button
-              onClick={() => handleAnswer(true)}
+              onClick={handleAnswer} // ← ここもシンプルに
               className="w-full max-w-[150px] bg-gradient-to-b from-[#FC4CFF] to-[#CA00A5] text-white text-[22px] font-bold py-4 rounded-[24px] shadow-md shadow-black/25 cursor-pointer"
             >
               はい
