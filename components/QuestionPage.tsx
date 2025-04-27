@@ -9,7 +9,8 @@ export default function QuestionPage() {
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
   const router = useRouter();
 
-  const handleAnswer = () => {
+  // 引数を受け取れるように変更（ただし中身では使わない）
+  const handleAnswer = (_answer?: boolean) => {
     if (currentQuestionIndex < questions.length - 1) {
       setCurrentQuestionIndex(currentQuestionIndex + 1);
     } else {

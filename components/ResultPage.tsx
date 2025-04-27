@@ -64,7 +64,7 @@ export default function ResultPage() {
           <h4 className="text-[16px] font-black leading-tight text-center text-[#233506]">
             🔍だれも知らない職業は...
           </h4>
-          <h2 className="flex items-center justify-center text-[28px] font-black leading-tight text-center text-[#233506] gap-2">
+          <h2 className="flex items-center justify-center text-[28px] font-black leading-tight text-left text-[#233506] gap-2">
             <span>{icon1}</span>
             <span>{title}</span>
             <span>{icon2}</span>
