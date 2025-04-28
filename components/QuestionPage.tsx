@@ -23,7 +23,7 @@ export default function QuestionPage() {
       header={
         <>
           <h4 className="text-[16px] font-black leading-tight text-center text-[#233506]">
-            🔍【質問{currentQuestionIndex + 1}】
+            🔍質問{currentQuestionIndex + 1}
           </h4>
           <h2 className="text-[28px] font-black leading-tight text-left text-[#233506]">
             {questions[currentQuestionIndex].text}
