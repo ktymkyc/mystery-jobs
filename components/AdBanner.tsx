@@ -13,7 +13,7 @@ export default function AdBanner() {
     script.src = 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js';
     script.async = true;
     script.crossOrigin = 'anonymous'; // セキュリティ強化のため追加
-    script.setAttribute('data-ad-client', 'ca-app-pub-2999212471207815');
+    script.setAttribute('data-ad-client', 'ca-app-pub-2999212471207158/1754977902');
     document.head.appendChild(script);
   }, []);
 
@@ -22,10 +22,9 @@ export default function AdBanner() {
       <ins
         className="adsbygoogle"
         style={{ display: 'block', width: 320, height: 50 }}
-        data-ad-client="ca-app-pub-2999212471207815"
+        data-ad-client="ca-app-pub-2999212471207158/1754977902"
         data-ad-slot="1754977902"
         data-ad-format="auto"
-        data-adtest="on" // ← 本番で正式にリリースする直前にこれだけ削除
       />
     </div>
   );
