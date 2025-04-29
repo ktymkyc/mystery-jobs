@@ -42,10 +42,16 @@ export default function ResultPage() {
   if (isLoading) {
     // Now Loading...画面を広告スペースに見立てる
     return (
-      <div
-        className="min-h-screen flex flex-col items-center justify-center bg-black text-white text-center px-8"
+      <div 
+        className="min-h-screen flex items-center justify-center"
+        style={{
+          background: 'linear-gradient(180deg, #E5FF63 0%, #F0FFD0 15%, #FFFBF0 60%, #E3DAFF 80%, #ABC4FF 100%)',
+        }}
       >
-        <AdBanner />
+        <div className="text-center">
+          <AdBanner />
+          <p className="text-lg font-bold text-[#233506] mb-4">Now Loading...</p>
+        </div>
       </div>
     );
   }
