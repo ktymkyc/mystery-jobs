@@ -1,32 +1,32 @@
 'use client';
 
-import Script from 'next/script';
+import { useEffect } from 'react';
 
 export default function AdBanner() {
+  useEffect(() => {
+    // すでにスクリプトが読み込まれている場合は何もしない
+    if (document.querySelector('script[src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"]')) {
+      return;
+    }
+
+    const script = document.createElement('script');
+    script.src = 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js';
+    script.async = true;
+    script.crossOrigin = 'anonymous'; // セキュリティ強化のため追加
+    script.setAttribute('data-ad-client', 'ca-app-pub-2999212471207815');
+    document.head.appendChild(script);
+  }, []);
+
   return (
-    <>
-      <Script
-        src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"
-        strategy="afterInteractive"
-        onLoad={() => {
-          try {
-            // @ts-ignore
-            (window.adsbygoogle = window.adsbygoogle || []).push({});
-          } catch (e) {
-            console.error('Ad init error:', e);
-          }
-        }}
+    <div className="flex justify-center my-4">
+      <ins
+        className="adsbygoogle"
+        style={{ display: 'block', width: 320, height: 50 }}
+        data-ad-client="ca-app-pub-2999212471207815"
+        data-ad-slot="1754977902"
+        data-ad-format="auto"
+        data-adtest="on" // ← 本番で正式にリリースする直前にこれだけ削除
       />
-      <div className="flex justify-center my-4">
-        <ins
-          className="adsbygoogle"
-          style={{ display: 'block', width: 320, height: 50 }}
-          data-ad-client="ca-app-pub-2999212471207815"
-          data-ad-slot="1754977902"
-          data-ad-format="auto"
-          data-adtest="on" // ← 表示確認用。あとで削除
-        />
-      </div>
-    </>
+    </div>
   );
 }
