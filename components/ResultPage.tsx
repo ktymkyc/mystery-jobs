@@ -3,6 +3,7 @@
 import { useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
 import AppLayout from '@/components/AppLayout';
+import AdBanner from '@/components/AdBanner';
 import { jobParts1 } from '@/data/jobParts1';
 import { jobParts2 } from '@/data/jobParts2';
 
@@ -17,7 +18,6 @@ export default function ResultPage() {
   const [person, setPerson] = useState('');
   const [description, setDescription] = useState('');
 
-  // ローディング → 診断結果に切り替える
   useEffect(() => {
     if (date && typeof date === 'string') {
       const seed = parseInt(date.replaceAll('-', ''));
@@ -33,30 +33,23 @@ export default function ResultPage() {
 
       const timer = setTimeout(() => {
         setIsLoading(false);
-      }, 2000); // 2秒後に診断結果表示
-
+      }, 5000); // 5秒間ローディング（＝広告スペース表示）
+      
       return () => clearTimeout(timer);
     }
   }, [date]);
 
   if (isLoading) {
-    // ⬇️ ローディング（＝広告表示を想定）
+    // Now Loading...画面を広告スペースに見立てる
     return (
-      <div 
-        className="min-h-screen flex items-center justify-center"
-        style={{
-          background: 'linear-gradient(180deg, #E5FF63 0%, #F0FFD0 15%, #FFFBF0 60%, #E3DAFF 80%, #ABC4FF 100%)',
-        }}
+      <div
+        className="min-h-screen flex flex-col items-center justify-center bg-black text-white text-center px-8"
       >
-        <div className="text-center">
-          <p className="text-lg font-bold text-[#233506] mb-4">Now Loading...</p>
-          {/* 将来的にここが広告に差し替わるイメージ */}
-        </div>
+        <AdBanner />
       </div>
     );
   }
 
-  // ⬇️ 診断結果
   return (
     <AppLayout
       header={
@@ -77,7 +70,7 @@ export default function ResultPage() {
             今すぐ転職？それとも
           </h4>
           <button
-            onClick={() => router.push('/questions')}
+            onClick={() => router.push('/')}
             className="w-full max-w-[312px] bg-gradient-to-b from-[#FC4CFF] to-[#CA00A5] text-white text-[22px] font-bold py-4 rounded-[24px] shadow-md shadow-black/25 cursor-pointer"
           >
             もう一度診断する
@@ -86,11 +79,9 @@ export default function ResultPage() {
       }
     >
       <div className="flex flex-col items-center justify-between flex-grow px-6 gap-6 mt-12">
-        {/* 解説テキスト */}
         <p className="text-[20px] font-medium text-[#233506] leading-relaxed max-w-[312px]">
           {description}
         </p>
-        {/* 人物アイコン */}
         <div className="text-[100px] leading-[100px]">{person}</div>
       </div>
     </AppLayout>
