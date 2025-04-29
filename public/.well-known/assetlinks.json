@@ -1,0 +1,12 @@
+[
+  {
+    "relation": ["delegate_permission/common.handle_all_urls"],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "app.vercel.mysteryjobs",
+      "sha256_cert_fingerprints": [
+        "BC:7B:CA:3D:6D:F0:22:77:AA:67:54:19:AE:E0:0F:8C:DE:C1:EA:71:F1:E7:3D:A1:10:FE:FD:50:29:B9:79:80"
+      ]
+    }
+  }
+]
