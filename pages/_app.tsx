@@ -1,9 +1,11 @@
+'use client';
+
 import { M_PLUS_Rounded_1c } from 'next/font/google';
 import '@/styles/globals.css';
-import type { AppProps } from 'next/app';
-import Head from 'next/head';
+import { AppProps } from 'next/app';
+import Script from 'next/script';
 
-const mplusRounded = M_PLUS_Rounded_1c({
+const mpPlusRounded = M_PLUS_Rounded_1c({
   weight: ['400', '700', '900'],
   subsets: ['latin'],
 });
@@ -11,21 +13,21 @@ const mplusRounded = M_PLUS_Rounded_1c({
 export default function App({ Component, pageProps }: AppProps) {
   return (
     <>
-      <Head>
-        <script async src="https://www.googletagmanager.com/gtag/js?id=G-67H5JZG7DK"></script>
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `
-              window.dataLayer = window.dataLayer || [];
-              function gtag(){dataLayer.push(arguments);}
-              gtag('js', new Date());
-              gtag('config', 'G-67H5JZG7DK');
-            `,
-          }}
-        />
-      </Head>
+      {/* Google Analytics スクリプト（推奨形式） */}
+      <Script
+        src="https://www.googletagmanager.com/gtag/js?id=G-67H5JZG7DK"
+        strategy="afterInteractive"
+      />
+      <Script id="google-analytics" strategy="afterInteractive">
+        {`
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-67H5JZG7DK');
+        `}
+      </Script>
 
-      <main className={mplusRounded.className}>
+      <main className={mpPlusRounded.className}>
         <Component {...pageProps} />
       </main>
     </>
