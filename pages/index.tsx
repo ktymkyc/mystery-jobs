@@ -1,23 +1,7 @@
 'use client';
 
-import { useEffect, useState } from 'react';
-import SplashPage from '@/components/SplashPage';
-import StartPage from '@/components/StartPage'; // これまで使っていた診断スタート画面
+import StartPage from '@/components/StartPage'; // 診断スタート画面（職業診断トップ）
 
 export default function Home() {
-  const [showSplash, setShowSplash] = useState(true);
-
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setShowSplash(false);
-    }, 2000); // 2秒間だけスプラッシュ
-
-    return () => clearTimeout(timer);
-  }, []);
-
-  return (
-    <>
-      {showSplash ? <SplashPage /> : <StartPage />}
-    </>
-  );
+  return <StartPage />;
 }
