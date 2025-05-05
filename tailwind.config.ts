@@ -37,6 +37,10 @@ const config: Config = {
         tight: '1',
         loose: '1.7',
       },
+      minHeight: {
+        'dvh': '100dvh',
+        'svh': '100svh',
+      },
     },
   },
   plugins: [],
