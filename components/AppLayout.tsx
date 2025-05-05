@@ -16,7 +16,7 @@ export default function AppLayout({ children, header, footer }: AppLayoutProps) 
 
   return (
     <div
-      className="flex flex-col items-center justify-between min-h-screen pt-14 pb-14 px-6 text-[#233506] relative"
+      className="flex flex-col items-center justify-between min-h-screen min-h-svh pt-14 pb-14 px-6 text-[#233506] relative"
       style={{
         background: 'linear-gradient(180deg, #E5FF63 0%, #F0FFD0 15%, #FFFBF0 60%, #E3DAFF 80%, #ABC4FF 100%)',
       }}

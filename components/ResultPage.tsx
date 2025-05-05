@@ -43,7 +43,7 @@ export default function ResultPage() {
     // Now Loading...画面を広告スペースに見立てる
     return (
       <div 
-        className="min-h-screen flex items-center justify-center"
+        className="min-h-screen min-h-svh flex items-center justify-center"
         style={{
           background: 'linear-gradient(180deg, #E5FF63 0%, #F0FFD0 15%, #FFFBF0 60%, #E3DAFF 80%, #ABC4FF 100%)',
         }}

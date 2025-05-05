@@ -14,7 +14,7 @@ export default function PrivacyPolicyPage() {
       }
       footer={null}
     >
-      <div className="flex flex-col items-center justify-start min-h-screen py-12 px-6 text-[#233506]">
+      <div className="flex flex-col items-center justify-start min-h-screen min-h-svh py-12 px-6 text-[#233506]">
         <div className="max-w-2xl w-full">
           <h1 className="text-3xl font-bold mb-6 text-center">プライバシーポリシー</h1>
 
