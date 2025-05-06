@@ -11,7 +11,6 @@ export default function ResultPage() {
   const { isReady, query } = router;
   const { date } = query;
 
-  const [isLoading, setIsLoading] = useState(true);
   const [title, setTitle] = useState('');
   const [icon1, setIcon1] = useState('');
   const [icon2, setIcon2] = useState('');
