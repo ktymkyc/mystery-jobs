@@ -31,10 +31,6 @@ export default function ResultPage() {
     setPerson(part2.person);
     setDescription(`${part1.description} ${part2.description}`);
 
-    const timer = setTimeout(() => {
-      setIsLoading(false);
-    }, 1000); // 本番は5秒, 今は動作確認のため1秒
-
     return () => clearTimeout(timer);
   }, [isReady, date]);
 
