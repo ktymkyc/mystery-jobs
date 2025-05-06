@@ -12,16 +12,16 @@ export default function CountdownPage() {
 
   useEffect(() => {
     if (!isReady || !date || typeof date !== 'string') return;
-
+  
     if (count > 0) {
       const timer = setTimeout(() => {
-        setCount(prev => prev - 1);
+        setCount((prev) => prev - 1);
       }, 1000);
       return () => clearTimeout(timer);
     } else {
       router.push(`/result?date=${date}`);
     }
-  }, [count, isReady, date]);
+  }, [count, isReady, date, router]); // ← router を追加
   return (
     <AppLayout
       header={

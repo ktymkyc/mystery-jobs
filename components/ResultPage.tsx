@@ -31,7 +31,6 @@ export default function ResultPage() {
     setPerson(part2.person);
     setDescription(`${part1.description} ${part2.description}`);
 
-    return () => clearTimeout(timer);
   }, [isReady, date]);
 
   return (
