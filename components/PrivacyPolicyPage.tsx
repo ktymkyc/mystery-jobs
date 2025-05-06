@@ -7,17 +7,15 @@ export default function PrivacyPolicyPage() {
     <AppLayout
       header={
         <header className="flex flex-col items-center gap-2">
-          <h4 className="text-[16px] font-black leading-tight text-center text-[#233506]">
-            📝 プライバシーポリシー
-          </h4>
+          <h1 className="text-[16px] font-black leading-tight text-center text-[#233506]">
+            📝プライバシーポリシー
+          </h1>
         </header>
       }
       footer={null}
     >
       <div className="flex flex-col items-center justify-start min-h-screen min-h-svh py-12 px-6 text-[#233506]">
         <div className="max-w-2xl w-full">
-          <h1 className="text-3xl font-bold mb-6 text-center">プライバシーポリシー</h1>
-
           <p className="mb-4">
             KATAYAMA Kiyoshi（以下「当方」といいます）は、当方が提供するスマートフォンアプリ（以下「本アプリ」といいます）において、ユーザーの個人情報の保護に最大限の注意を払います。
           </p>
@@ -53,7 +51,7 @@ export default function PrivacyPolicyPage() {
 
           <h2 className="text-2xl font-bold mt-8 mb-4">6. お問い合わせ</h2>
           <p className="mb-4">本ポリシーに関するお問い合わせは、以下のメールアドレスまでお願いいたします。</p>
-          <p className="mb-4">ktymkyc1@gmail.com</p>
+          <p className="mb-4">katayama.design@gmail.com</p>
         </div>
       </div>
     </AppLayout>

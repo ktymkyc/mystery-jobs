@@ -1,5 +1,3 @@
-// pages/privacy-policy.tsx
-
 'use client';
 
 import PrivacyPolicyPage from '@/components/PrivacyPolicyPage';
