@@ -3,7 +3,6 @@
 import { useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
 import AppLayout from '@/components/AppLayout';
-import AdPage from '@/components/AdBanner';
 import { jobParts1 } from '@/data/jobParts1';
 import { jobParts2 } from '@/data/jobParts2';
 
