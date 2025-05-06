@@ -31,7 +31,7 @@ export default function BirthPage() {
 
   const handleSubmit = () => {
     if (birthDate) {
-      router.push(`/result?date=${birthDate}`);
+      router.push(`/ad?date=${birthDate}`);
     }
   };
 
@@ -54,11 +54,11 @@ export default function BirthPage() {
           </h4>
           <button
             onClick={handleSubmit}
-            disabled={!birthDate}
+            // disabled={!birthDate}
             className={`w-full max-w-[312px] text-[22px] font-bold py-4 rounded-[24px] ${
               birthDate
                 ? 'bg-gradient-to-b from-[#FC4CFF] to-[#CA00A5] text-white shadow-md shadow-black/25 cursor-pointer'
-                : 'bg-[#E6C1E6] text-[#F7ECF7] cursor-default'
+                : 'bg-[#E6C1E6] text-[#F7ECF7] cursor-not-allowed'
             }`}            
           >
             診断する

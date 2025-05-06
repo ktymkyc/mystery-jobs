@@ -3,7 +3,7 @@
 import { useRouter } from 'next/router';
 import AppLayout from '@/components/AppLayout';
 
-export default function ErrorPage() {
+function CustomErrorPage({ statusCode }: { statusCode?: number }) {
   const router = useRouter();
 
   return (
@@ -23,7 +23,7 @@ export default function ErrorPage() {
           onClick={() => router.push('/')}
           className="w-full max-w-[312px] bg-gradient-to-b from-[#FC4CFF] to-[#CA00A5] text-white text-[22px] font-bold py-4 rounded-[24px] shadow-md shadow-black/25 cursor-pointer"
         >
-          診断スタートに戻る
+          診断スタートにもどる
         </button>
       }
     >
@@ -43,3 +43,11 @@ export default function ErrorPage() {
     </AppLayout>
   );
 }
+
+// Next.js の要件に応じて getInitialProps を追加
+CustomErrorPage.getInitialProps = ({ res, err }: any) => {
+  const statusCode = res?.statusCode || err?.statusCode || 404;
+  return { statusCode };
+};
+
+export default CustomErrorPage;

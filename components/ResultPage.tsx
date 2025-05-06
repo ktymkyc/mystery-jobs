@@ -3,13 +3,14 @@
 import { useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
 import AppLayout from '@/components/AppLayout';
-import AdBanner from '@/components/AdBanner';
+import AdPage from '@/components/AdBanner';
 import { jobParts1 } from '@/data/jobParts1';
 import { jobParts2 } from '@/data/jobParts2';
 
 export default function ResultPage() {
   const router = useRouter();
-  const { date } = router.query;
+  const { isReady, query } = router;
+  const { date } = query;
 
   const [isLoading, setIsLoading] = useState(true);
   const [title, setTitle] = useState('');
@@ -19,49 +20,32 @@ export default function ResultPage() {
   const [description, setDescription] = useState('');
 
   useEffect(() => {
-    if (date && typeof date === 'string') {
-      const seed = parseInt(date.replaceAll('-', ''));
+    if (!isReady || !date || typeof date !== 'string') return;
 
-      const part1 = jobParts1[seed % jobParts1.length];
-      const part2 = jobParts2[(seed * 3) % jobParts2.length];
+    const seed = parseInt(date.replaceAll('-', ''));
 
-      setTitle(`${part1.text}${part2.text}`);
-      setIcon1(part1.icon);
-      setIcon2(part2.icon);
-      setPerson(part2.person);
-      setDescription(`${part1.description} ${part2.description}`);
+    const part1 = jobParts1[seed % jobParts1.length];
+    const part2 = jobParts2[(seed * 3) % jobParts2.length];
 
-      const timer = setTimeout(() => {
-        setIsLoading(false);
-      }, 5000); // 5秒間ローディング（＝広告スペース表示）
-      
-      return () => clearTimeout(timer);
-    }
-  }, [date]);
+    setTitle(`${part1.text}${part2.text}`);
+    setIcon1(part1.icon);
+    setIcon2(part2.icon);
+    setPerson(part2.person);
+    setDescription(`${part1.description} ${part2.description}`);
 
-  if (isLoading) {
-    // Now Loading...画面を広告スペースに見立てる
-    return (
-      <div 
-        className="min-h-screen min-h-svh flex items-center justify-center"
-        style={{
-          background: 'linear-gradient(180deg, #E5FF63 0%, #F0FFD0 15%, #FFFBF0 60%, #E3DAFF 80%, #ABC4FF 100%)',
-        }}
-      >
-        <div className="text-center">
-          <AdBanner />
-          <p className="text-lg font-bold text-[#233506] mb-4">Now Loading...</p>
-        </div>
-      </div>
-    );
-  }
+    const timer = setTimeout(() => {
+      setIsLoading(false);
+    }, 1000); // 本番は5秒, 今は動作確認のため1秒
+
+    return () => clearTimeout(timer);
+  }, [isReady, date]);
 
   return (
     <AppLayout
       header={
         <>
           <h4 className="text-[16px] font-black leading-tight text-center text-[#233506]">
-            🔍だれも知らない職業は...
+            🔍あなたに適した職業は...
           </h4>
           <h2 className="flex items-center justify-center text-[28px] font-black leading-tight text-left text-[#233506] gap-2">
             <span>{icon1}</span>

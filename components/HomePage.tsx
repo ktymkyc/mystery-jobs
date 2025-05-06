@@ -30,7 +30,7 @@ export default function StartPage() {
             だれも知らない職業を探そう！
           </h4>
           <button
-            onClick={() => router.push('/questions')}
+            onClick={() => router.push('/start')}
             className="w-full max-w-[312px] bg-gradient-to-b from-[#FC4CFF] to-[#CA00A5] text-white text-[22px] font-bold py-4 rounded-[24px] shadow-md shadow-black/25 cursor-pointer"
           >
             診断スタート
