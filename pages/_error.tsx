@@ -3,6 +3,7 @@
 import { useRouter } from 'next/router';
 import AppLayout from '@/components/AppLayout';
 import { errorMessages, ErrorKey } from '@/data/error';
+import { NextPageContext } from 'next';
 
 function CustomErrorPage({ statusCode }: { statusCode?: number }) {
   const router = useRouter();
@@ -46,7 +47,7 @@ function CustomErrorPage({ statusCode }: { statusCode?: number }) {
   );
 }
 
-CustomErrorPage.getInitialProps = ({ res, err }: any) => {
+CustomErrorPage.getInitialProps = ({ res, err }: NextPageContext) => {
   const statusCode = res?.statusCode || err?.statusCode || 404;
   return { statusCode };
 };
