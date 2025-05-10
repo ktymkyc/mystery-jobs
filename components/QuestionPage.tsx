@@ -38,13 +38,19 @@ export default function QuestionPage() {
           <div className="flex w-full flex-row items-center justify-center gap-3">
             <button
               onClick={handleAnswer} // ← ここをシンプルに
-              className="w-full max-w-[150px] bg-gradient-to-b from-[#FC4CFF] to-[#CA00A5] text-white text-[22px] font-bold py-4 rounded-[24px] shadow-md shadow-black/25 cursor-pointer"
+              className="w-full max-w-[150px] text-white text-[22px] font-bold py-4 rounded-[24px] shadow-md shadow-black/25 cursor-pointer"
+              style={{
+                background: 'linear-gradient(to bottom, #FC4CFF 0%, #CA00A5 100%)',
+              }}
             >
               いいえ
             </button>
             <button
               onClick={handleAnswer} // ← ここもシンプルに
-              className="w-full max-w-[150px] bg-gradient-to-b from-[#FC4CFF] to-[#CA00A5] text-white text-[22px] font-bold py-4 rounded-[24px] shadow-md shadow-black/25 cursor-pointer"
+              className="w-full max-w-[150px] text-white text-[22px] font-bold py-4 rounded-[24px] shadow-md shadow-black/25 cursor-pointer"
+              style={{
+                background: 'linear-gradient(to bottom, #FC4CFF 0%, #CA00A5 100%)',
+              }}
             >
               はい
             </button>

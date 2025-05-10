@@ -54,12 +54,19 @@ export default function BirthPage() {
           </h4>
           <button
             onClick={handleSubmit}
-            // disabled={!birthDate}
+            disabled={!birthDate}
             className={`w-full max-w-[312px] text-[22px] font-bold py-4 rounded-[24px] ${
               birthDate
-                ? 'bg-gradient-to-b from-[#FC4CFF] to-[#CA00A5] text-white shadow-md shadow-black/25 cursor-pointer'
-                : 'bg-[#E6C1E6] text-[#F7ECF7] cursor-not-allowed'
-            }`}            
+                ? 'text-white shadow-md shadow-black/25 cursor-pointer'
+                : 'text-[#F7ECF7] cursor-not-allowed'
+            }`}
+            style={{
+              background: birthDate
+                ? 'linear-gradient(to bottom, #FC4CFF 0%, #CA00A5 100%)'
+                : '#E6C1E6',
+              WebkitAppearance: 'none',
+              border: 'none',
+            }}
           >
             診断する
           </button>

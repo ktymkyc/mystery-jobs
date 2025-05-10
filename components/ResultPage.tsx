@@ -16,6 +16,7 @@ export default function ResultPage() {
   const [icon2, setIcon2] = useState('');
   const [person, setPerson] = useState('');
   const [description, setDescription] = useState('');
+  const [isSmallScreen, setIsSmallScreen] = useState(false);
 
   useEffect(() => {
     if (!isReady || !date || typeof date !== 'string') return;
@@ -30,8 +31,18 @@ export default function ResultPage() {
     setIcon2(part2.icon);
     setPerson(part2.person);
     setDescription(`${part1.description} ${part2.description}`);
-
   }, [isReady, date]);
+
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      const handleResize = () => {
+        setIsSmallScreen(window.innerWidth < 400);
+      };
+      handleResize();
+      window.addEventListener('resize', handleResize);
+      return () => window.removeEventListener('resize', handleResize);
+    }
+  }, []);
 
   return (
     <AppLayout
@@ -54,7 +65,10 @@ export default function ResultPage() {
           </h4>
           <button
             onClick={() => router.push('/')}
-            className="w-full max-w-[312px] bg-gradient-to-b from-[#FC4CFF] to-[#CA00A5] text-white text-[22px] font-bold py-4 rounded-[24px] shadow-md shadow-black/25 cursor-pointer"
+            className="w-full max-w-[312px] text-white text-[22px] font-bold py-4 rounded-[24px] shadow-md shadow-black/25 cursor-pointer"
+            style={{
+              background: 'linear-gradient(to bottom, #FC4CFF 0%, #CA00A5 100%)',
+            }}
           >
             もう一度診断する
           </button>
@@ -62,7 +76,12 @@ export default function ResultPage() {
       }
     >
       <div className="flex flex-col items-center justify-between flex-grow px-6 gap-6 mt-12">
-        <p className="text-[20px] font-medium text-[#233506] leading-relaxed max-w-[312px]">
+        <p
+          className="font-medium text-[#233506] leading-relaxed max-w-[312px]"
+          style={{
+            fontSize: isSmallScreen ? '16px' : '20px',
+          }}
+        >
           {description}
         </p>
         <div className="text-[100px] leading-[100px]">{person}</div>

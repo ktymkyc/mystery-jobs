@@ -1,6 +1,6 @@
 'use client';
 
-import { ReactNode } from 'react';
+import React, { ReactNode, useEffect, useState } from 'react';
 import { usePathname, useRouter } from 'next/navigation';
 
 interface AppLayoutProps {
@@ -17,15 +17,28 @@ export default function AppLayout({ children, header, footer }: AppLayoutProps) 
   const isAdPage = pathname.startsWith('/ad');
   const disableBack = isCountdownPage || isAdPage;
 
+  const [paddingStyle, setPaddingStyle] = useState({});
+
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      setPaddingStyle({
+        paddingTop: window.innerHeight < 700 ? '24px' : '56px',
+        paddingBottom: window.innerHeight < 700 ? '24px' : '56px',
+        paddingLeft: window.innerWidth < 700 ? '0' : '24px',
+        paddingRight: window.innerWidth < 700 ? '0' : '24px',
+      });
+    }
+  }, []);
+
   return (
     <div
-      className="flex flex-col items-center justify-between min-h-screen min-h-svh pt-14 pb-14 px-6 text-[#233506] relative"
+      className="flex flex-col items-center justify-between min-h-screen min-h-svh px-6 text-[#233506] relative"
       style={{
         background: 'linear-gradient(180deg, #E5FF63 0%, #F0FFD0 15%, #FFFFFB 60%, #E3DAFF 80%, #ABC4FF 100%)',
+        ...paddingStyle,
       }}
     >
       {/* 戻るボタン（ホーム以外） */}
-
       {showBackButton && (
         <button
           onClick={() => {
@@ -41,7 +54,6 @@ export default function AppLayout({ children, header, footer }: AppLayoutProps) 
           ◀︎
         </button>
       )}
-
 
       {header && (
         <header className="flex flex-col items-center gap-3 w-full max-w-[312px]">
