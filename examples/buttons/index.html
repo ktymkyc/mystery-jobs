@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ボタンコンポーネントデモ</title>
+  <style>
+    :root {
+      --primary-color: #FC4CFF;
+      --primary-hover: #CA00A5;
+      --primary-active: #9C0080;
+      --secondary-bg: #FFF0FF;
+      --secondary-active: #FFE6FF;
+      --disabled-bg: #E6C1E6;
+      --disabled-text: #F7ECF7;
+    }
+    
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f5f5f5;
+    }
+    
+    header {
+      background-color: var(--primary-color);
+      color: white;
+      padding: 16px;
+      text-align: center;
+    }
+    
+    h1 {
+      margin: 0;
+      font-size: 24px;
+    }
+    
+    main {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+    
+    .demo-section {
+      background-color: white;
+      border-radius: 8px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+      padding: 20px;
+      margin-bottom: 20px;
+    }
+    
+    .button-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-bottom: 16px;
+    }
+    
+    /* ボタンコンポーネントのスタイル */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 500;
+      border-radius: 4px;
+      transition: all 0.2s;
+      cursor: pointer;
+      border: none;
+    }
+    
+    .btn-sm {
+      height: 32px;
+      padding: 0 12px;
+      font-size: 14px;
+    }
+    
+    .btn-md {
+      height: 40px;
+      padding: 0 16px;
+      font-size: 16px;
+    }
+    
+    .btn-lg {
+      height: 48px;
+      padding: 0 24px;
+      font-size: 18px;
+    }
+    
+    .btn-primary {
+      background-color: var(--primary-color);
+      color: white;
+    }
+    
+    .btn-primary:hover {
+      background-color: var(--primary-hover);
+    }
+    
+    .btn-primary:active {
+      background-color: var(--primary-active);
+    }
+    
+    .btn-secondary {
+      background-color: white;
+      color: var(--primary-color);
+      border: 1px solid var(--primary-color);
+    }
+    
+    .btn-secondary:hover {
+      background-color: var(--secondary-bg);
+    }
+    
+    .btn-secondary:active {
+      background-color: var(--secondary-active);
+    }
+    
+    .btn[disabled] {
+      opacity: 0.6;
+      pointer-events: none;
+    }
+    
+    .btn-primary[disabled] {
+      background-color: var(--disabled-bg);
+      color: var(--disabled-text);
+    }
+    
+    .btn-secondary[disabled] {
+      border-color: var(--disabled-bg);
+      color: var(--disabled-bg);
+    }
+    
+    .btn-full {
+      width: 100%;
+    }
+    
+    .icon-left {
+      margin-right: 8px;
+    }
+    
+    .icon-right {
+      margin-left: 8px;
+    }
+    
+    .loading {
+      animation: spin 1s linear infinite;
+      margin-right: 8px;
+    }
+    
+    @keyframes spin {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+    
+    /* ユーティリティ */
+    .section-title {
+      margin-top: 0;
+      border-bottom: 1px solid #eee;
+      padding-bottom: 8px;
+      color: #333;
+    }
+    
+    .usage-code {
+      background-color: #f0f0f0;
+      padding: 16px;
+      border-radius: 4px;
+      overflow-x: auto;
+      font-family: monospace;
+      line-height: 1.5;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>ボタンコンポーネントデモ</h1>
+  </header>
+  
+  <main>
+    <div class="demo-section">
+      <h2 class="section-title">プライマリボタン</h2>
+      <div class="button-row">
+        <button class="btn btn-primary btn-sm">小</button>
+        <button class="btn btn-primary btn-md">中（デフォルト）</button>
+        <button class="btn btn-primary btn-lg">大</button>
+        <button class="btn btn-primary btn-md" disabled>無効</button>
+        <button class="btn btn-primary btn-md">
+          <span class="loading">⟳</span>ローディング
+        </button>
+        <button class="btn btn-primary btn-md">
+          <span class="icon-left">↑</span>アイコン（左）
+        </button>
+        <button class="btn btn-primary btn-md">
+          アイコン（右）<span class="icon-right">→</span>
+        </button>
+      </div>
+    </div>
+    
+    <div class="demo-section">
+      <h2 class="section-title">セカンダリボタン</h2>
+      <div class="button-row">
+        <button class="btn btn-secondary btn-sm">小</button>
+        <button class="btn btn-secondary btn-md">中（デフォルト）</button>
+        <button class="btn btn-secondary btn-lg">大</button>
+        <button class="btn btn-secondary btn-md" disabled>無効</button>
+        <button class="btn btn-secondary btn-md">
+          <span class="loading">⟳</span>ローディング
+        </button>
+        <button class="btn btn-secondary btn-md">
+          <span class="icon-left">↑</span>アイコン（左）
+        </button>
+        <button class="btn btn-secondary btn-md">
+          アイコン（右）<span class="icon-right">→</span>
+        </button>
+      </div>
+    </div>
+    
+    <div class="demo-section">
+      <h2 class="section-title">全幅ボタン</h2>
+      <div>
+        <button class="btn btn-primary btn-md btn-full" style="margin-bottom: 16px">プライマリ（全幅）</button>
+        <button class="btn btn-secondary btn-md btn-full">セカンダリ（全幅）</button>
+      </div>
+    </div>
+    
+    <div class="demo-section">
+      <h2 class="section-title">使用方法</h2>
+      <p>Reactコンポーネントでの使用例：</p>
+      <pre class="usage-code">
+import { Button } from './components/ui/Button';
+
+// プライマリボタン
+&lt;Button&gt;ボタンテキスト&lt;/Button&gt;
+
+// セカンダリボタン
+&lt;Button variant="secondary"&gt;ボタンテキスト&lt;/Button&gt;
+
+// サイズ
+&lt;Button size="sm"&gt;小&lt;/Button&gt;
+&lt;Button&gt;中（デフォルト）&lt;/Button&gt;
+&lt;Button size="lg"&gt;大&lt;/Button&gt;
+
+// アイコン
+&lt;Button leftIcon={&lt;Icon /&gt;}&gt;アイコン付き&lt;/Button&gt;
+
+// 無効
+&lt;Button disabled&gt;無効&lt;/Button&gt;
+
+// ローディング
+&lt;Button isLoading&gt;ローディング&lt;/Button&gt;
+      </pre>
+    </div>
+  </main>
+  
+  <footer style="text-align: center; padding: 16px; background-color: #f0f0f0; border-top: 1px solid #ddd; color: #666;">
+    <p style="margin: 0;">Figma Design Tokens + React Componentサンプル</p>
+  </footer>
+</body>
+</html> 
