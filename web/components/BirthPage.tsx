@@ -1,14 +1,12 @@
 'use client';
 
-import { useEffect, useRef, useState } from 'react';
+import { useState } from 'react';
 import { useRouter } from 'next/router';
 import AppLayout from '@components/AppLayout';
 
 export default function BirthPage() {
   const router = useRouter();
-  const inputRef = useRef<HTMLInputElement>(null);
   const [birthDate, setBirthDate] = useState('');
-  const [isClient, setIsClient] = useState(false);
 
   const today = new Date();
   const past = new Date();
@@ -17,20 +15,6 @@ export default function BirthPage() {
   const formatDate = (date: Date) => date.toISOString().split('T')[0];
   const minDate = formatDate(past);
   const maxDate = formatDate(today);
-
-  useEffect(() => {
-    setIsClient(true);
-  }, []);
-
-  const handleClick = () => {
-    if (inputRef.current) {
-      if (inputRef.current.showPicker) {
-        inputRef.current.showPicker();
-      } else {
-        inputRef.current.focus();
-      }
-    }
-  };
 
   const handleSubmit = () => {
     if (birthDate) {
@@ -77,25 +61,14 @@ export default function BirthPage() {
       }
     >
       <div className="w-full max-w-[312px] flex flex-col items-center justify-between flex-grow gap-6 mt-12">
-        {isClient ? (
-          <div
-            onClick={handleClick}
-            className="w-full border-2 border-black bg-white text-center text-[22px] px-4 py-4 rounded-[16px] cursor-pointer"
-          >
-            <input
-              ref={inputRef}
-              type="date"
-              value={birthDate}
-              onChange={(e) => setBirthDate(e.target.value)}
-              min={minDate}
-              max={maxDate}
-              className="w-full bg-transparent text-center appearance-none focus:outline-none cursor-pointer"
-            />
-          </div>
-        ) : (
-          <div className="h-[56px] w-full" />
-        )}
-
+        <input
+          type="date"
+          value={birthDate}
+          onChange={(e) => setBirthDate(e.target.value)}
+          min={minDate}
+          max={maxDate}
+          className="w-full border-2 border-black bg-white text-center text-[22px] px-4 py-4 rounded-[16px] cursor-pointer appearance-none focus:outline-none"
+        />
         <div className="text-[100px] leading-[100px]">👩‍🍼</div>
       </div>
     </AppLayout>
