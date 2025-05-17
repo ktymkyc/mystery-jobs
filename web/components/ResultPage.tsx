@@ -20,19 +20,29 @@ export default function ResultPage() {
 
   useEffect(() => {
     if (!isReady || !date || typeof date !== 'string') return;
-
-    const seed = parseInt(date.replaceAll('-', ''));
-
-    const part1 = jobParts1[seed % jobParts1.length];
-    const part2 = jobParts2[(seed * 3) % jobParts2.length];
-
+  
+    const hashStringToNumber = (str: string) => {
+      let hash = 0;
+      for (let i = 0; i < str.length; i++) {
+        hash = (hash << 5) - hash + str.charCodeAt(i);
+        hash |= 0;
+      }
+      return Math.abs(hash);
+    };
+  
+    const seed1 = hashStringToNumber(date);
+    const seed2 = hashStringToNumber(date + 'alt');
+  
+    const part1 = jobParts1[seed1 % jobParts1.length];
+    const part2 = jobParts2[seed2 % jobParts2.length];
+  
     setTitle(`${part1.text}${part2.text}`);
     setIcon1(part1.icon);
     setIcon2(part2.icon);
     setPerson(part2.person);
     setDescription(`${part1.description} ${part2.description}`);
   }, [isReady, date]);
-
+  
   useEffect(() => {
     if (typeof window !== 'undefined') {
       const handleResize = () => {
