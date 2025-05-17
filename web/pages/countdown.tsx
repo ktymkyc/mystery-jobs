@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
-import AppLayout from '@/components/AppLayout';
+import AppLayout from '@components/AppLayout';
 
 export default function CountdownPage() {
   const router = useRouter();

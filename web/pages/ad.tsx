@@ -2,7 +2,7 @@
 
 import { useEffect } from 'react';
 import { useRouter, useSearchParams } from 'next/navigation';
-import AppLayout from '@/components/AppLayout';
+import AppLayout from '@components/AppLayout';
 
 export default function AdPage() {
   const router = useRouter();

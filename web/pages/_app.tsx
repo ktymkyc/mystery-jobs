@@ -1,7 +1,7 @@
 'use client';
 
 import { M_PLUS_Rounded_1c } from 'next/font/google';
-import '@/styles/globals.css';
+import '@styles/globals.css';
 import { AppProps } from 'next/app';
 import Script from 'next/script';
 

@@ -1,4 +1,4 @@
 // pages/result.tsx
-import ResultPage from '@/components/ResultPage';
+import ResultPage from '@components/ResultPage';
 
 export default ResultPage;

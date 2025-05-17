@@ -1,6 +1,6 @@
 'use client';
 
-import QuestionPage from '@/components/QuestionPage';
+import QuestionPage from '@components/QuestionPage';
 
 export default function Questions() {
   return <QuestionPage />;

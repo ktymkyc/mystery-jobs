@@ -1,4 +1,4 @@
-# --- Core dependencies ---
+# --- Node modules ---
 /node_modules/
 web/node_modules/
 mobile/node_modules/
@@ -7,37 +7,53 @@ mobile/node_modules/
 /.next/
 web/.next/
 web/out/
+web/dist/
 web/build/
-web/coverage/
+web/.vercel/
 mobile/.expo/
 mobile/dist/
 mobile/build/
+build/
+out/
+coverage/
 
-# --- Expo ---
-.expo/
-expo-env.d.ts
+# --- Cache ---
+web/.next/cache/
+web/.cache/
+.npm/
+.pnpm-debug.log*
+*.tsbuildinfo
 
 # --- Env files ---
-.env*
+.env
 .env.local
-.env.production
 .env.development
+.env.production
+.env*.local
+web/.env
+web/.env.local
+web/.env.development.local
+web/.env.test.local
+web/.env.production.local
 
-# --- Logs and debug ---
+# --- Logs ---
 *.log
 logs/
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
-.pnpm-debug.log*
-*.tsbuildinfo
+
+# --- TypeScript ---
+next-env.d.ts
 
 # --- IDE and system ---
 .DS_Store
+Thumbs.db
 .vscode/
 .idea/
 
 # --- Misc ---
+*.pem
 .pnp/
 .pnp.*
 .yarn/*
@@ -46,20 +62,7 @@ yarn-error.log*
 !.yarn/releases
 !.yarn/versions
 
-# --- TypeScript ---
-next-env.d.ts
-
-# --- Vercel ---
-.vercel
-
-# testing
-/coverage
-
-# production
-/build
-
-# misc
-*.pem
-
-# local env files
-.env*.local
+# --- Binary / Large files ---
+*.node
+*.pack
+*.gz
