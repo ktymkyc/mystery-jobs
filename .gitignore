@@ -1,21 +1,20 @@
 # --- Core dependencies ---
 /node_modules/
-apps/*/node_modules/
-packages/*/node_modules/
+web/node_modules/
+mobile/node_modules/
 
 # --- Build outputs ---
 /.next/
-apps/*/.next/
-apps/*/dist/
-apps/*/build/
-out/
-build/
-coverage/
+web/.next/
+web/out/
+web/build/
+web/coverage/
+mobile/.expo/
+mobile/dist/
+mobile/build/
 
 # --- Expo ---
 .expo/
-apps/*/.expo/
-*.expo/*
 expo-env.d.ts
 
 # --- Env files ---
