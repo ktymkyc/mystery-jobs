@@ -1,12 +1,13 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 import { useRouter } from 'next/router';
 import AppLayout from '@components/AppLayout';
 
 export default function BirthPage() {
   const router = useRouter();
   const [birthDate, setBirthDate] = useState('');
+  const inputRef = useRef<HTMLInputElement>(null);
 
   const today = new Date();
   const past = new Date();
@@ -60,8 +61,12 @@ export default function BirthPage() {
         </>
       }
     >
-      <div className="w-full max-w-[312px] flex flex-col items-center justify-between flex-grow gap-6 mt-12">
+      <div
+        onClick={() => inputRef.current?.focus()}
+        className="w-full max-w-[312px] flex flex-col items-center justify-between flex-grow gap-6 mt-12"
+      >
         <input
+          ref={inputRef}
           type="date"
           value={birthDate}
           onChange={(e) => setBirthDate(e.target.value)}
