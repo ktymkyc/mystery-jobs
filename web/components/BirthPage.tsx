@@ -72,7 +72,7 @@ export default function BirthPage() {
           onChange={(e) => setBirthDate(e.target.value)}
           min={minDate}
           max={maxDate}
-          className="w-full border-2 border-black bg-white text-center text-[22px] px-4 py-4 rounded-[16px] cursor-pointer appearance-none focus:outline-none"
+          className="w-full border-2 border-black bg-white text-center text-[22px] px-4 py-4 rounded-[16px] cursor-pointer appearance-none focus:outline-none pointer-events-none"
         />
         <div className="text-[100px] leading-[100px]">👩‍🍼</div>
       </div>
